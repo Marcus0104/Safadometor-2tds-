@@ -25,7 +25,6 @@ function somaDigitos(int $numero)
         $digitos = $numero % 10;
         $soma += $digitos;
         $numero = $numero / 10;
-
     }
 
     return $soma;
@@ -34,29 +33,33 @@ function Safadometro(int $dia, int $mes, int $ano)
 {
     $safadeza =  somatorio($mes) + somaDigitos($ano) * (50 - $dia) / 10;
     $anjeza =  100 - $safadeza;
-    
+
     return [
         'safadeza' => $safadeza,
         'anjeza' => $anjeza
     ];
-
 }
 $resultado = Safadometro((int)$dia, (int)$mes, (int)$ano);
-?> 
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <title>Resultado</title>
 </head>
+
 <body>
     <h2>
-    <?php
+        <?php
         print("Sua porcentagem de safado é " . $resultado['safadeza'] . "%😈<br>");
         print("Sua porcentagem de anjeza é " . $resultado['anjeza'] . "%😇<br>");
         ?>
+        <a href="index.html">Recalcular</a>
     </h2>
 </body>
+
 </html>
